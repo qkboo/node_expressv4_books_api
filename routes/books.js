@@ -18,7 +18,9 @@ var book = {
 router.route('/books')
     .get( function(req, res) {
 	    console.log( 'GET /api/books' );
-  		res.send(JSON.stringify(books));
+  		// res.send(JSON.stringify(books));
+	    res.render('books', { "title" : "GET /api/books", 
+	    					  "books" : books});
 	})
 	.post( function(req, res) {
 		console.log("Adding a Book: " + req.body.title );
